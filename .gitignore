@@ -4,4 +4,5 @@ id_rsa*
 .ssh/config
 .ssh/known_hosts*
 .gitconfig
+secure_files/
 
