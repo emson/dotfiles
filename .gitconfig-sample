@@ -1,0 +1,25 @@
+[user]
+	name = Joe Blogs
+	email = joe@blogs.co.uk
+[github]
+	user = joeyb
+	token = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  alog = log --graph --oneline --all
+	ctags = !.git/hooks/ctags
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[core]
+  excludesfile = /Users/joeyb/.gitignore
+
+[init]
+	templatedir = ~/.git_template

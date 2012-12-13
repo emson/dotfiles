@@ -1,0 +1,7 @@
+.DS_Store
+id_rsa*
+*.pem
+.ssh/config
+.ssh/known_hosts*
+.gitconfig
+
