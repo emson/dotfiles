@@ -35,6 +35,7 @@ alias fd='cd ~/Dropbox/devel/ruby/flashdown'
 alias o2='cd ~/devel/o2/'
 alias mou='open -a Mou'
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias redisstart='redis-server'
 
 
 
