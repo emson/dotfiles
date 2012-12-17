@@ -11,4 +11,5 @@ chmod 644 $HOME/.ssh/*
 chmod 600 $HOME/.ssh/id_rsa
 chmod 600 $HOME/.ssh/id_rsa_lesscoding
 chmod 600 $HOME/.ssh/id_rsa_linode_lesscoding
+chmod 400 $HOME/.ssh/*.pem
 
