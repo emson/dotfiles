@@ -1,8 +1,8 @@
 .DS_Store
 id_rsa*
 *.pem
-.ssh/config
-.ssh/known_hosts*
-.gitconfig
+ssh/config
+ssh/known_hosts*
+gitconfig
 secure_files/
 
