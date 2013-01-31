@@ -4,8 +4,8 @@ ln  -sF  $HOME/Dropbox/dotfiles/bash_profile   $HOME/.bash_profile
 ln  -sF  $HOME/Dropbox/dotfiles/gitconfig      $HOME/.gitconfig
 ln  -sF  $HOME/Dropbox/dotfiles/git_template   $HOME/.git_template
 ln  -sF  $HOME/Dropbox/dotfiles/tmux.conf      $HOME/.tmux.conf
-ln  -sF  $HOME/Dropbox/dotfiles/ssh            $HOME/.ssh
 ln  -sF  $HOME/Dropbox/dotfiles/todo.cfg       $HOME/.todo.cfg
+ln  -sFh $HOME/Dropbox/dotfiles/ssh            $HOME/.ssh
 
 # set permissions
 # http://iknow.me/snippets/new-machine-with-dropbox-ssh-and-profile
