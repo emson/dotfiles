@@ -1,0 +1,15 @@
+tmux has-session -t work
+if [ $? != 0 ]
+then
+  tmux new-session -s work -n O2 -d
+  tmux send-keys -t work 'cd ~/devel/o2' C-m
+  tmux send-keys -t work 'vim .' C-m
+  tmux split-window -h -p 28 -c '~/devel/o2'
+
+  #tmux new-window -n Dotfiles -t work
+  #tmux send-keys -t work:2 'cd ~/Dropbox/dotfiles' C-m
+  #tmux send-keys -t work:2 'vim .' C-m
+  tmux select-window -t work:O2 # select the window
+  tmux select-pane -l # select the last pane
+fi
+tmux attach -t work

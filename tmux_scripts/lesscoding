@@ -1,0 +1,13 @@
+tmux has-session -t sideproject
+if [ $? != 0 ]
+then
+  tmux new-session -s sideproject -n LessCoding -d
+  tmux send-keys -t sideproject 'cd ~/devel/wordpress' C-m
+  tmux send-keys -t sideproject 'vim .' C-m
+  tmux split-window -h -p 28 -c '~/devel/wordpress'
+  tmux split-window -v -p 28 -c '~/devel/wordpress'
+
+  tmux select-window -t sideproject:LessCoding # select the window
+  tmux select-pane -l # select the last pane
+fi
+tmux attach -t sideproject

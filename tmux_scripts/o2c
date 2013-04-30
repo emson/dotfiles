@@ -1,0 +1,32 @@
+tmux has-session -t o2c
+if [ $? != 0 ]
+then
+  tmux new-session -s o2c -n MessageBus -d
+  tmux send-keys -t o2c 'cd ~/devel/o2/o2c/o2c_messagebus' C-m
+  tmux send-keys -t o2c 'vim .' C-m
+  tmux split-window -h -p 28 -c '~/devel/o2/o2c/o2c_messagebus'
+  tmux split-window -v -t o2c:1.1 -p 50 -c '~/devel/o2/o2c/o2c_messagebus'
+
+  tmux new-window -n Adapter -t o2c
+  tmux send-keys -t o2c:2 'cd ~/devel/o2/o2c/o2c_adapter' C-m
+  tmux send-keys -t o2c:2 'vim .' C-m
+  tmux split-window -h -p 28 -c '~/devel/o2/o2c/o2c_adapter'
+  tmux split-window -v -t o2c:2.1 -p 50 -c '~/devel/o2/o2c/o2c_adapter'
+  tmux select-pane -L # select the left pane
+
+  #tmux new-window -n Relays -t o2c
+  #tmux send-keys -t o2c:3 'cd ~/devel/o2/o2c/relays' C-m
+  #tmux send-keys -t o2c:3 'vim .' C-m
+  #tmux split-window -h -p 50 -c '~/devel/o2/o2c/relays'
+  #tmux send-keys -t o2c:3.1 'clear; cap production_relay1 o2c:ssh'
+  #tmux split-window -v -t o2c:3.1 -p 70 -c '~/devel/o2/o2c/relays'
+  #tmux send-keys -t o2c:3.2 'clear; cap production_relay2 o2c:ssh'
+  #tmux split-window -v -t o2c:3.2 -p 60 -c '~/devel/o2/o2c/relays'
+  #tmux send-keys -t o2c:3.3 'clear; cap production_relay3 o2c:ssh'
+  #tmux split-window -v -t o2c:3.3 -p 50 -c '~/devel/o2/o2c/relays'
+  #tmux send-keys -t o2c:3.4 'clear; cap production_relay4 o2c:ssh'
+
+  tmux select-window -t o2c:MessageBus # select the window
+  tmux select-pane -L # select the left pane
+fi
+tmux attach -t o2c
