@@ -1,0 +1,32 @@
+tmux has-session -t rubymotion
+if [ $? != 0 ]
+then
+  tmux new-session -s rubymotion -n RubyMotion -d
+  tmux send-keys -t rubymotion 'cd ~/Dropbox/devel/rubymotion' C-m
+  tmux send-keys -t rubymotion 'vim .' C-m
+  tmux split-window -h -p 28 -c '~/Dropbox/devel/rubymotion/'
+  #tmux split-window -v -t rubymotion:1.1 -p 50 -c '~/Dropbox/devel/rubymotion'
+
+  tmux new-window -n examples -t rubymotion
+  tmux send-keys -t rubymotion:2 'cd ~/Dropbox/devel/rubymotion/examples' C-m
+  tmux send-keys -t rubymotion:2 'vim .' C-m
+  tmux split-window -h -p 28 -c '~/Dropbox/devel/rubymotion/examples'
+  #tmux split-window -v -t rubymotion:2.1 -p 50 -c '~/Dropbox/devel/rubymotion/examples'
+  tmux select-pane -L # select the left pane
+
+  #tmux new-window -n Relays -t rubymotion
+  #tmux send-keys -t rubymotion:3 'cd ~/devel/o2/rubymotion/relays' C-m
+  #tmux send-keys -t rubymotion:3 'vim .' C-m
+  #tmux split-window -h -p 50 -c '~/devel/o2/rubymotion/relays'
+  #tmux send-keys -t rubymotion:3.1 'clear; cap production_relay1 rubymotion:ssh'
+  #tmux split-window -v -t rubymotion:3.1 -p 70 -c '~/devel/o2/rubymotion/relays'
+  #tmux send-keys -t rubymotion:3.2 'clear; cap production_relay2 rubymotion:ssh'
+  #tmux split-window -v -t rubymotion:3.2 -p 60 -c '~/devel/o2/rubymotion/relays'
+  #tmux send-keys -t rubymotion:3.3 'clear; cap production_relay3 rubymotion:ssh'
+  #tmux split-window -v -t rubymotion:3.3 -p 50 -c '~/devel/o2/rubymotion/relays'
+  #tmux send-keys -t rubymotion:3.4 'clear; cap production_relay4 rubymotion:ssh'
+
+  tmux select-window -t rubymotion:RubyMotion # select the window
+  tmux select-pane -L # select the left pane
+fi
+tmux attach -t rubymotion

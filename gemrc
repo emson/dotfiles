@@ -1,0 +1,4 @@
+
+# Ben's .gemrc file
+gem: --no-ri --no-rdoc
+
