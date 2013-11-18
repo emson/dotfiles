@@ -14,16 +14,43 @@ then
   tmux new-window -n Relays -t icecast
   tmux send-keys -t icecast:3 'cd ~/devel/o2/icecast2-servers/relays' C-m
   tmux send-keys -t icecast:3 'vim .' C-m
+
   tmux split-window -h -p 50 -c '~/devel/o2/icecast2-servers/relays'
-  tmux send-keys -t icecast:3.1 'clear; cap production_relay1 icecast:ssh'
-  tmux split-window -v -t icecast:3.1 -p 70 -c '~/devel/o2/icecast2-servers/relays'
-  tmux send-keys -t icecast:3.2 'clear; cap production_relay2 icecast:ssh'
+
+  tmux send-keys -t icecast:3.1 -l 'clear; bundle exec cap production_relay1 icecast:ssh'
+  tmux split-window -v -t icecast:3.1 -p 80 -c '~/devel/o2/icecast2-servers/relays'
+
+  tmux send-keys -t icecast:3.2 -l 'clear; bundle exec cap production_relay2 icecast:ssh'
   tmux split-window -v -t icecast:3.2 -p 60 -c '~/devel/o2/icecast2-servers/relays'
-  tmux send-keys -t icecast:3.3 'clear; cap production_relay3 icecast:ssh'
-  tmux split-window -v -t icecast:3.3 -p 50 -c '~/devel/o2/icecast2-servers/relays'
-  tmux send-keys -t icecast:3.4 'clear; cap production_relay4 icecast:ssh'
+
+  tmux send-keys -t icecast:3.3 -l 'clear; bundle exec cap production_relay3 icecast:ssh'
+  tmux split-window -v -t icecast:3.3 -p 60 -c '~/devel/o2/icecast2-servers/relays'
+
+  tmux send-keys -t icecast:3.4 -l 'clear; bundle exec cap production_relay4 icecast:ssh'
+  tmux split-window -v -t icecast:3.4 -p 50 -c '~/devel/o2/icecast2-servers/relays'
+
+  tmux send-keys -t icecast:3.5 -l 'clear; bundle exec cap production_relay5 icecast:ssh'
+
 
   tmux select-window -t icecast:Relays # select the window
   tmux select-pane -D # select the last pane
 fi
 tmux attach -t icecast
+
+
+
+  # tmux new-window -n Relays -t icecast
+  # tmux send-keys -t icecast:3 'cd ~/devel/o2/icecast2-servers/relays' C-m
+  # tmux send-keys -t icecast:3 'vim .' C-m
+  # tmux split-window -h -p 50 -c '~/devel/o2/icecast2-servers/relays'
+  # tmux send-keys -t icecast:3.1 'clear; bundle exec cap production_relay1 icecast:ssh'
+  # tmux split-window -v -t icecast:3.1 -p 70 -c '~/devel/o2/icecast2-servers/relays'
+  # tmux send-keys -t icecast:3.2 'clear; bundle exec cap production_relay2 icecast:ssh'
+  # tmux split-window -v -t icecast:3.2 -p 60 -c '~/devel/o2/icecast2-servers/relays'
+  # tmux send-keys -t icecast:3.3 'clear; bundle exec cap production_relay3 icecast:ssh'
+  # tmux split-window -v -t icecast:3.3 -p 50 -c '~/devel/o2/icecast2-servers/relays'
+  # tmux send-keys -t icecast:3.4 'clear; bundle exec cap production_relay4 icecast:ssh'
+  # tmux split-window -v -t icecast:3.4 -p 50 -c '~/devel/o2/icecast2-servers/relays'
+  # tmux send-keys -t icecast:3.4 'clear; bundle exec cap production_relay5 icecast:ssh'
+
+

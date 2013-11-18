@@ -1,4 +1,14 @@
 
 # Ben's .gemrc file
-gem: --no-ri --no-rdoc
+:update_sources: true
+:sources:
+- http://gems.rubyforge.org/
+- http://gems.github.com
+:benchmark: false
+:bulk_threshold: 1000
+:backtrace: false
+:verbose: true
+# --no-ri and --no-rdoc have be deprecated
+install: --no-document
+update:  --no-document
 
