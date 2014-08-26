@@ -13,7 +13,6 @@ export PATH=$PATH
 export SHELL='bash'
 export EDITOR='vim'
 
-
 # ===== Initialisations =====
 
 
