@@ -66,6 +66,11 @@ Also install Tmux plugins:
 
 * <https://github.com/tmux-plugins/tpm>
 
+Add the plugins to the bottom of your `.tmux.conf` file then remember to install with:
+
+    prefix + I
+
+
 #### Tmux Resurrect:
 
 * <https://github.com/tmux-plugins/tmux-resurrect>
