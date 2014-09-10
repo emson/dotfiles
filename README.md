@@ -58,5 +58,8 @@ switching to a new machine.
 ### Tmux
 
     $ brew install tmux
+    // sometimes installing tmux has an error if so run this:
+    $ brew unlink libevent && brew link libevent
+    $ brew install reattach-to-user-namespace
 
 
