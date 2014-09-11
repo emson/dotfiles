@@ -4,12 +4,12 @@
 
 Clone this repository into the root of your Dropbox account.
 
-		$ git clone git@github.com:emson/dotfiles.git ~/Dropbox/
+    $ git clone git@github.com:emson/dotfiles.git ~/Dropbox/
 
 Then open the terminal and navigate to your cloned `dotfiles` directory:
 
-		$ cd ~/Dropbox/dotfiles
-		$ assign_all.sh
+    $ cd ~/Dropbox/dotfiles
+  	$ assign_all.sh
 
 NB If you already have a `~/.ssh/` directory you will have to manually move it.
 
@@ -23,6 +23,8 @@ switching to a new machine.
 
 * <https://github.com/sstephenson/rbenv>
 
+Install with this command:
+
     $ git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
     $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
     $ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
@@ -31,6 +33,8 @@ switching to a new machine.
 ### Ruby-build
 
 * <https://github.com/sstephenson/ruby-build>
+
+Install with this command:
 
     $ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
     $ rbenv install 1.9.3-p327
@@ -41,11 +45,13 @@ switching to a new machine.
 
 * <http://mxcl.github.com/homebrew/>
 
+Install with this command:
+
     $ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 
 ### Ack
 
-    $ brew install ack
+   $ brew install ack
 
 ### VimBen
 
@@ -75,7 +81,7 @@ Add the plugins to the bottom of your `.tmux.conf` file then remember to install
 
 * <https://github.com/tmux-plugins/tmux-resurrect>
 
-    Key bindings
+Key bindings
 
     prefix + Ctrl-s or prefix + Alt-s - save
     prefix + Ctrl-r or prefix + Alt-r - restore
@@ -84,10 +90,12 @@ Add the plugins to the bottom of your `.tmux.conf` file then remember to install
 
 * <https://github.com/tmux-plugins/tmux-yank>
 
-    Key bindings
+Key bindings
+
     prefix + y - copies text from the command line to clipboard.
 
-    copy mode bindings:
+Copy mode bindings:
+
     y - copy selection to system clipboard
     Ctrl-y - "put" selection - equivalent to copying a selection, and pasting it to the command line
     Alt-y - performs both of the above: copy to system clipboard and put to command line
