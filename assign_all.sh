@@ -5,6 +5,7 @@ ln  -sF  $HOME/Dropbox/dotfiles/bashrc         $HOME/.bashrc
 ln  -sF  $HOME/Dropbox/dotfiles/profile        $HOME/.profile
 ln  -sF  $HOME/Dropbox/dotfiles/gitconfig      $HOME/.gitconfig
 ln  -sF  $HOME/Dropbox/dotfiles/git_template   $HOME/.git_template
+ln  -sF  $HOME/Dropbox/dotfiles/tmate.conf     $HOME/.tmate.conf
 ln  -sF  $HOME/Dropbox/dotfiles/tmux.conf      $HOME/.tmux.conf
 ln  -sF  $HOME/Dropbox/dotfiles/tmux_scripts   $HOME/.tmux_scripts
 ln  -sF  $HOME/Dropbox/dotfiles/gemrc          $HOME/.gemrc

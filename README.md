@@ -136,3 +136,25 @@ To copy a highlighted match:
 
     Enter - if you're using Tmux vi mode
 
+
+### Tmate
+
+Tmate is a Tmux fork, that enables remote pairing through Tmux.
+
+* <http://tmate.io/>
+
+    $ brew update
+    $ brew tab nviennot/tmate
+    $ brew install tmate
+
+Usage just run `tmate -f ~/.tmate.conf` from the commandline.  
+To see the log messages once you have started Tmate:
+
+    $ tmate show-messages
+
+If you get an error try:
+
+    $ brew reinstall pkg-config autoconf automake
+    $ brew reinstall libtool
+
+
