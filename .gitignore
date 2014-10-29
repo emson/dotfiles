@@ -5,4 +5,6 @@ ssh/config
 ssh/known_hosts*
 gitconfig
 secure_files/
+assign_env.sh
+
 

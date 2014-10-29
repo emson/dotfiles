@@ -11,6 +11,7 @@ ln  -sF  $HOME/Dropbox/dotfiles/tmux_scripts   $HOME/.tmux_scripts
 ln  -sF  $HOME/Dropbox/dotfiles/gemrc          $HOME/.gemrc
 ln  -sF  $HOME/Dropbox/dotfiles/Rprofile       $HOME/.Rprofile
 ln  -sF  $HOME/Dropbox/dotfiles/todo.cfg       $HOME/.todo.cfg
+ln  -sF  $HOME/Dropbox/dotfiles/assign_env.sh  $HOME/.assign_env.sh
 ln  -sFh $HOME/Dropbox/dotfiles/ssh            $HOME/.ssh
 
 # set permissions

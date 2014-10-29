@@ -12,6 +12,8 @@ export SHELL='bash'
 export EDITOR='vim'
 #export VISUAL=$EDITOR
 
+# set Environment Variables
+source $HOME/.assign_env.sh
 
 # ===== Initialisations =====
 
