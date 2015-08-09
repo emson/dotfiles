@@ -1,0 +1,32 @@
+tmux has-session -t suds
+if [ $? != 0 ]
+then
+  tmux new-session -s suds -n Suds -d
+  tmux send-keys -t suds 'cd ~/devel/o2/soa-workbench' C-m
+  tmux send-keys -t suds 'vim .' C-m
+  tmux split-window -h -p 28 -c '~/devel/o2/soa-workbench/sudslib'
+  tmux split-window -v -t suds:1.1 -p 50 -c '~/devel/o2/soa-workbench/sudslib'
+
+  #tmux new-window -n O2CWeb -t o2c
+  #tmux send-keys -t o2c:2 'cd ~/devel/o2/o2c/o2c_web' C-m
+  #tmux send-keys -t o2c:2 'vim .' C-m
+  #tmux split-window -h -p 28 -c '~/devel/o2/o2c/o2c_web'
+  #tmux split-window -v -t o2c:2.1 -p 50 -c '~/devel/o2/o2c/o2c_web'
+  #tmux select-pane -L # select the left pane
+
+  #tmux new-window -n Relays -t o2c
+  #tmux send-keys -t o2c:3 'cd ~/devel/o2/o2c/relays' C-m
+  #tmux send-keys -t o2c:3 'vim .' C-m
+  #tmux split-window -h -p 50 -c '~/devel/o2/o2c/relays'
+  #tmux send-keys -t o2c:3.1 'clear; cap production_relay1 o2c:ssh'
+  #tmux split-window -v -t o2c:3.1 -p 70 -c '~/devel/o2/o2c/relays'
+  #tmux send-keys -t o2c:3.2 'clear; cap production_relay2 o2c:ssh'
+  #tmux split-window -v -t o2c:3.2 -p 60 -c '~/devel/o2/o2c/relays'
+  #tmux send-keys -t o2c:3.3 'clear; cap production_relay3 o2c:ssh'
+  #tmux split-window -v -t o2c:3.3 -p 50 -c '~/devel/o2/o2c/relays'
+  #tmux send-keys -t o2c:3.4 'clear; cap production_relay4 o2c:ssh'
+
+  tmux select-window -t suds:Suds # select the window
+  tmux select-pane -L # select the left pane
+fi
+tmux attach -t suds
