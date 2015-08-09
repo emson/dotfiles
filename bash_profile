@@ -5,8 +5,9 @@
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH" ### Added by the Heroku Toolbelt
-export ANDROID_HOME="/Users/BEmson1/Library/AndroidSDK/android-sdk-macosx"
-export PATH="$PATH:~/scripts:$ANDROID_HOME/platform-tools"
+export PATH="$(brew --prefix)/include/opencv2:$PATH" ### Add Brew path
+# export ANDROID_HOME="/Users/BEmson1/Library/AndroidSDK/android-sdk-macosx"
+# export PATH="$PATH:~/scripts:$ANDROID_HOME/platform-tools"
 export PATH=$PATH
 export SHELL='bash'
 export EDITOR='vim'
@@ -115,4 +116,5 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Added Tmuxinator
 # [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 

@@ -2,6 +2,7 @@
 # create symbolic links to all the dotfiles and directories
 ln  -sF  $HOME/Dropbox/dotfiles/bash_profile   $HOME/.bash_profile
 ln  -sF  $HOME/Dropbox/dotfiles/bashrc         $HOME/.bashrc
+ln  -sF  $HOME/Dropbox/dotfiles/iex.exs        $HOME/.iex.exs
 ln  -sF  $HOME/Dropbox/dotfiles/profile        $HOME/.profile
 ln  -sF  $HOME/Dropbox/dotfiles/gitconfig      $HOME/.gitconfig
 ln  -sF  $HOME/Dropbox/dotfiles/git_template   $HOME/.git_template

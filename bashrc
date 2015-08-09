@@ -9,6 +9,7 @@ fi
 # path settings
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$(brew --prefix)/include:$PATH" ### Add Brew path
 export PATH=$PATH
 export SHELL='bash'
 export EDITOR='vim'
