@@ -4,6 +4,7 @@
 # path settings
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="/Users/emson/src/neo4j-community-2.2.5/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH" ### Added by the Heroku Toolbelt
 export PATH="$(brew --prefix)/include/opencv2:$PATH" ### Add Brew path
 # export ANDROID_HOME="/Users/BEmson1/Library/AndroidSDK/android-sdk-macosx"
@@ -11,6 +12,7 @@ export PATH="$(brew --prefix)/include/opencv2:$PATH" ### Add Brew path
 export PATH=$PATH
 export SHELL='bash'
 export EDITOR='vim'
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/Dropbox/dotfiles/secure_files/Image-analyzer-621e5683f550.json"
 #export VISUAL=$EDITOR
 
 # set Environment Variables
@@ -55,12 +57,12 @@ alias b='bundle'
 alias dx='cd ~/Dropbox/devel/'
 alias dl='cd ~/devel/'
 alias o2='cd ~/devel/o2/'
-alias mdn='open -a MacDown'
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias mariastart="cd '/usr/local/opt/mariadb' ; /usr/local/opt/mariadb/bin/mysqld_safe --datadir='/usr/local/var/mysql'"
 alias redisstart='redis-server'
 alias t='todo.sh -n'
 alias ct='clear; todo.sh -n'
+alias iprenew='sudo ipconfig set en0 DHCP'
 alias rmsim='rm -rf /Users/BEmson1/Library/Application\ Support/iPhone\ Simulator/*'
 
 
@@ -69,34 +71,34 @@ alias rmsim='rm -rf /Users/BEmson1/Library/Application\ Support/iPhone\ Simulato
 
 # function to change directory to the one set in the last opened finder.
 cdf () {
-   currFolderPath=$( /usr/bin/osascript <<"			EOT"
-       tell application "Finder"
-           try
-               set currFolder to (folder of the front window as alias)
-           on error
-               set currFolder to (path to desktop folder as alias)
-           end try
-           POSIX path of currFolder
-       end tell
-			EOT
-   )
-   echo "cd to \"$currFolderPath\""
-   cd "$currFolderPath"
+currFolderPath=$( /usr/bin/osascript <<"			EOT"
+tell application "Finder"
+try
+set currFolder to (folder of the front window as alias)
+on error
+set currFolder to (path to desktop folder as alias)
+end try
+POSIX path of currFolder
+end tell
+EOT
+)
+echo "cd to \"$currFolderPath\""
+cd "$currFolderPath"
 }
 
 # change file to lower case
 lower () {
-	for i in "$1"; do 
-	    mv "$i" "`echo $i| tr [A-Z] [a-z]`";
-	done
+for i in "$1"; do
+mv "$i" "`echo $i| tr [A-Z] [a-z]`";
+done
 }
 
 
 
 # Git branch in prompt
 function parse_git_branch_appended {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo -ne "("${ref#refs/heads/}")"
+ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+echo -ne "("${ref#refs/heads/}")"
 }
 
 
@@ -111,7 +113,12 @@ PS1="\[\033[0m\]\W:\[\033[0;33m\]\$(parse_git_branch_appended)\[\033[0;32m\]\$ "
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 # eval "$(rbenv init -)"
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
 # Added Tmuxinator
 # [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
