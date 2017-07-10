@@ -6,7 +6,8 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/Users/emson/src/neo4j-community-2.2.5/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH" ### Added by the Heroku Toolbelt
-export PATH="$(brew --prefix)/include/opencv2:$PATH" ### Add Brew path
+# export PATH="$(brew --prefix)/include/opencv2:$PATH" ### Add Brew path
+export PATH="$(brew --prefix)/include:$PATH" ### Add Brew path
 # export ANDROID_HOME="/Users/BEmson1/Library/AndroidSDK/android-sdk-macosx"
 # export PATH="$PATH:~/scripts:$ANDROID_HOME/platform-tools"
 export PATH=$PATH
@@ -51,21 +52,36 @@ alias gci='git commit'
 alias gd='git diff'
 alias gdiff='git diff'
 alias gadd='git add'
+alias gmerge='git merge'
+alias d='docker'
+alias di='docker images'
 alias bi='bundle install'
 alias be='bundle exec'
 alias b='bundle'
-alias dx='cd ~/Dropbox/devel/'
 alias dl='cd ~/devel/'
 alias o2='cd ~/devel/o2/'
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias mariastart="cd '/usr/local/opt/mariadb' ; /usr/local/opt/mariadb/bin/mysqld_safe --datadir='/usr/local/var/mysql'"
 alias redisstart='redis-server'
-alias t='todo.sh -n'
-alias ct='clear; todo.sh -n'
-alias iprenew='sudo ipconfig set en0 DHCP'
-alias rmsim='rm -rf /Users/BEmson1/Library/Application\ Support/iPhone\ Simulator/*'
+# alias ebtopo='eb --profile topolytics'
+# alias ebspot='eb --profile spot'
 
 
+dx() {
+  cd ~/Dropbox/devel/$@
+}
+
+ebtopo() {
+  eb $@ --profile topolytics
+}
+
+ebchina() {
+  eb $@ --profile china
+}
+
+ebm2m() {
+  eb $@ --profile m2m
+}
 
 # ====== functions =====
 
